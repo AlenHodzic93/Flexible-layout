@@ -1,0 +1,79 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+.header{
+    background-color: $header-bg-color;
+    color: $header-color;
+    font-size: 2em;
+    text-align: center;
+    font-weight: 600;
+    padding: 2px;
+}
+.logo-content{
+    background-color: $logo-content-color;
+    color:#fff;
+    text-align: center;
+    padding: 55px;
+}
+
+.nav{
+    background-color: $nav-bg-color;
+    display: flex;
+    .link-item{
+        padding: 15px;
+        color: #fff;
+        &:hover{
+            background-color: #aaa;
+            cursor: pointer;
+        }
+    }
+}
+
+.wrapper{
+    display: flex;
+    .sidebar{
+        padding: $defaul-padding;
+        background-color: $sidebar-bg-color;
+        width: 30%;
+        .user-image{
+            @include image-block;
+        }
+        .sidebar-image{
+            @include image-block;
+            height: 70px;
+            margin-bottom: 10px;
+        }
+    }
+    .main{
+        padding: $defaul-padding;
+        width: 70%;
+        .main-image{
+            @include image-block;
+        }
+    }
+}
+.footer{
+    background-color: $footer-bg-color;
+    text-align: center;
+    padding: 5px;
+}
+
+.m-0{
+    margin:0;
+}
+
+@media only screen and (max-width:600px){
+        .wrapper{
+        flex-direction: column;
+        .sidebar, .main{
+         width: calc(100% -40px);
+        }
+        .sidebar{
+            width: 100%;
+        }
+    }
+    .nav{
+    flex-direction: column;
+    text-align: center;
+   }
+}
